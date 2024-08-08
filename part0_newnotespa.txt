@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant browser
+    browser->>: GET Notes from html element "notes_form"
+    browser->>: Add note to list notes
+
+    participant browser
+    participant server
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+	new_note["Hola desde Ecuador"]
+    activate server
+    server-->>browser: {"message":"note created"}
+    deactivate server
+renders the notes
