@@ -41,9 +41,13 @@ const App = (props) => {
 
   setTimeout(
     () => setCounter(counter + 1),
-    1000
+    800
   )
   const increaseByOne = () => {
+    setTimeout(
+      () => setCounter(counter + 1),
+      800
+    ) 
     console.log('increasing, value before', counter)
     setCounter(counter + 1)
   }
@@ -127,9 +131,9 @@ const App = (props) => {
       <div>
         <Display counter={counter}></Display>
         <h1>Greetings</h1>
-        <Button onClick={increaseByOne} text='PLUS' />
-        <Button onClick={setToZero} text='ZERO' />
-        <Button onClick={decreaseByOne} text='MINUS' />
+        <Button onClick={increaseByOne} text='SUMAR' />
+        <Button onClick={setToZero} text='RESET' />
+        <Button onClick={decreaseByOne} text='RESTAR' />
 
         <Hello name="Maya" age={26 + 10} />
         <Hello name={name} age={age} />
